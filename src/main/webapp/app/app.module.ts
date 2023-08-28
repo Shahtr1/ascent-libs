@@ -25,6 +25,7 @@ import { FooterComponent } from './layouts/footer/footer.component';
 import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
+import { KeycloakService } from './shared/services/keycloak.service';
 
 @NgModule({
   imports: [
@@ -49,10 +50,17 @@ import { ErrorComponent } from './layouts/error/error.component';
   bootstrap: [MainComponent],
 })
 export class AppModule {
-  constructor(applicationConfigService: ApplicationConfigService, iconLibrary: FaIconLibrary, dpConfig: NgbDatepickerConfig) {
+  constructor(
+    applicationConfigService: ApplicationConfigService,
+    iconLibrary: FaIconLibrary,
+    dpConfig: NgbDatepickerConfig,
+    keycloakService: KeycloakService
+  ) {
     applicationConfigService.setEndpointPrefix(SERVER_API_URL);
     registerLocaleData(locale);
     iconLibrary.addIcons(...fontAwesomeIcons);
     dpConfig.minDate = { year: dayjs().subtract(100, 'year').year(), month: 1, day: 1 };
+
+    keycloakService.init();
   }
 }

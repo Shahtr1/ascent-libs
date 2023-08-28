@@ -48,9 +48,10 @@ spring:
       # it can be set to any label, branch or commit of the configuration source Git repository
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:sqlserver://localhost:1433;database=ascent_libs_api;encrypt=false
-    username: SA
-    password: yourStrong(!)Password
+    url: jdbc:sqlserver://localhost:1433;database=api_sbs_dev;encrypt=false
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: sa
+    password: root
     hikari:
       poolName: Hikari
       auto-commit: false
@@ -126,3 +127,13 @@ jhipster:
 # ===================================================================
 
 # application:
+
+keycloak:
+  realm: ascent
+  auth-server-url: http://localhost:8082/auth/
+  resource: webapi
+  credentials:
+    secret: VcSiR8q0uD5cYZMnXRd36fjKvK3c49AN
+  bearer-only: true
+  public-client: true
+  use-resource-role-mappings: false
