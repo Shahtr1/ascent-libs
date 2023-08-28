@@ -6,9 +6,6 @@
 # To activate this configuration launch integration tests with the 'testcontainers' profile
 #
 # More information on database containers: https://www.testcontainers.org/modules/databases/
-#
-# You are required to accept EULA license for SQL server containers.
-# Follow the instructions at https://www.testcontainers.org/modules/databases/mssqlserver/
 # ===================================================================
 
 spring:
@@ -16,13 +13,6 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     hikari:
       auto-commit: false
-      poolName: Hikari
-      maximum-pool-size: 1
-      data-source-properties:
-        cachePrepStmts: true
-        prepStmtCacheSize: 250
-        prepStmtCacheSqlLimit: 2048
-        useServerPrepStmts: true
   jpa:
     open-in-view: false
     hibernate:

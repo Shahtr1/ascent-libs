@@ -1,8 +1,6 @@
-import { Component, OnInit, RendererFactory2, Renderer2 } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router, ActivatedRouteSnapshot, NavigationEnd } from '@angular/router';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import dayjs from 'dayjs/esm';
 
 import { AccountService } from 'app/core/auth/account.service';
 
@@ -11,17 +9,7 @@ import { AccountService } from 'app/core/auth/account.service';
   templateUrl: './main.component.html',
 })
 export class MainComponent implements OnInit {
-  private renderer: Renderer2;
-
-  constructor(
-    private accountService: AccountService,
-    private titleService: Title,
-    private router: Router,
-    private translateService: TranslateService,
-    rootRenderer: RendererFactory2
-  ) {
-    this.renderer = rootRenderer.createRenderer(document.querySelector('html'), null);
-  }
+  constructor(private accountService: AccountService, private titleService: Title, private router: Router) {}
 
   ngOnInit(): void {
     // try to log in automatically
@@ -31,12 +19,6 @@ export class MainComponent implements OnInit {
       if (event instanceof NavigationEnd) {
         this.updateTitle();
       }
-    });
-
-    this.translateService.onLangChange.subscribe((langChangeEvent: LangChangeEvent) => {
-      this.updateTitle();
-      dayjs.locale(langChangeEvent.lang);
-      this.renderer.setAttribute(document.querySelector('html'), 'lang', langChangeEvent.lang);
     });
   }
 
@@ -51,8 +33,8 @@ export class MainComponent implements OnInit {
   private updateTitle(): void {
     let pageTitle = this.getPageTitle(this.router.routerState.snapshot.root);
     if (!pageTitle) {
-      pageTitle = 'global.title';
+      pageTitle = 'Ascent Libs Api';
     }
-    this.translateService.get(pageTitle).subscribe(title => this.titleService.setTitle(title));
+    this.titleService.setTitle(pageTitle);
   }
 }
