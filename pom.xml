@@ -1005,10 +1005,13 @@
                                 </configuration>
                             </execution>
                             <execution>
-                                <id>npm install</id>
+                                <id>npm install --force</id>
                                 <goals>
                                     <goal>npm</goal>
                                 </goals>
+                                <configuration>
+                                    <arguments>install --force</arguments>
+                                </configuration>
                             </execution>
                             <execution>
                                 <id>webapp build dev</id>
