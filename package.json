@@ -98,6 +98,7 @@
     "@ngxs/logger-plugin": "^3.8.1",
     "@ngxs/store": "^3.8.1",
     "@popperjs/core": "2.11.6",
+    "asc-shared-libs": "^1.0.0-0",
     "bootstrap": "5.2.0",
     "canvg": "^4.0.1",
     "dayjs": "1.11.5",

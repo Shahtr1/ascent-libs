@@ -1,49 +1,45 @@
-<div class="row">
-  <div class="col-md-3">
-    <span class="hipster img-fluid rounded"></span>
-  </div>
+<lib-base-table
+  [inputOptions]="tableInputOptions"
+  [tableId]="'t-master-account-purpose'"
+  [size]="'small'"
+  [rowsPerPage]="8"
+  [rowExpansionTemplate]="rowExpansionTemplate"
+  [(selectedItems)]="selectedAccountPurposes"
+  (onTableRowSelect)="onRowSelect($event)"
+  (onTableRowUnselect)="onRowUnselect($event)"
+>
+  <!--  <ng-container ngProjectAs="caption">Nice Toolbar</ng-container>-->
+  <ng-container ngProjectAs="summary">
+    <div class="flex align-items-center justify-content-between">Custom summary</div>
+  </ng-container>
+</lib-base-table>
 
-  <div class="col-md-9">
-    <h1 class="display-4"><span>Welcome, Java Hipster!</span> (Ascent Libs Api)</h1>
-
-    <p class="lead">This is your homepage</p>
-
-    <div [ngSwitch]="account !== null">
-      <div class="alert alert-success" *ngSwitchCase="true">
-        <span id="home-logged-message" *ngIf="account">You are logged in as user "{{ account.login }}".</span>
+<ng-template #rowExpansionTemplate let-item>
+  <tr>
+    <td colspan="10">
+      <div class="p-3">
+        <p-table [value]="item.subProducts" dataKey="code">
+          <ng-template pTemplate="header">
+            <tr>
+              <th width="50%">Code</th>
+              <th width="50%">Sub category</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-subProduct>
+            <tr>
+              <td>{{ subProduct.code }}</td>
+              <td>{{ subProduct.category }}</td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="emptymessage">
+            <tr>
+              <td colspan="2" style="text-align: center">There are no sub-products.</td>
+            </tr>
+          </ng-template>
+        </p-table>
       </div>
+    </td>
+  </tr>
+</ng-template>
 
-      <div class="alert alert-warning" *ngSwitchCase="false">
-        <span>If you want to </span>
-        <a class="alert-link" (click)="login()">sign in</a
-        ><span
-          >, you can try the default accounts:<br />- Administrator (login="admin" and password="admin") <br />- User (login="user" and
-          password="user").</span
-        >
-      </div>
-    </div>
-
-    <p>If you have any question on JHipster:</p>
-
-    <ul>
-      <li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener noreferrer">JHipster homepage</a></li>
-      <li>
-        <a href="https://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener noreferrer">JHipster on Stack Overflow</a>
-      </li>
-      <li>
-        <a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener noreferrer"
-          >JHipster bug tracker</a
-        >
-      </li>
-      <li>
-        <a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">JHipster public chat room</a>
-      </li>
-      <li><a href="https://twitter.com/jhipster" target="_blank" rel="noopener noreferrer">follow @jhipster on Twitter</a></li>
-    </ul>
-
-    <p>
-      <span>If you like JHipster, don't forget to give us a star on</span>
-      <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener noreferrer">GitHub</a>!
-    </p>
-  </div>
-</div>
+{{ selectedAccountPurposes | json }}
