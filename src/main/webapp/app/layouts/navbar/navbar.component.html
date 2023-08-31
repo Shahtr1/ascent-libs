@@ -1,22 +1,5 @@
 <nav data-cy="navbar" class="navbar navbar-dark navbar-expand-md bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand logo" routerLink="/" (click)="collapseNavbar()">
-      <span class="logo-img"></span>
-      <span class="navbar-title">AscentLibsApi</span>
-      <span class="navbar-version">{{ version }}</span>
-    </a>
-    <a
-      class="navbar-toggler d-lg-none"
-      href="javascript:void(0);"
-      data-toggle="collapse"
-      data-target="#navbarResponsive"
-      aria-controls="navbarResponsive"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      (click)="toggleNavbar()"
-    >
-      <fa-icon icon="bars"></fa-icon>
-    </a>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed" [ngSwitch]="account !== null">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
@@ -46,7 +29,7 @@
             <li>
               <a
                 class="dropdown-item"
-                routerLink="test-entity"
+                routerLink="/test-entity"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
                 (click)="collapseNavbar()"
@@ -58,7 +41,7 @@
             <li>
               <a
                 class="dropdown-item"
-                routerLink="app-base-table"
+                routerLink="/app-base-table"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
                 (click)="collapseNavbar()"
@@ -70,7 +53,7 @@
             <li>
               <a
                 class="dropdown-item"
-                routerLink="app-label"
+                routerLink="/app-label"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
                 (click)="collapseNavbar()"
@@ -82,7 +65,7 @@
             <li>
               <a
                 class="dropdown-item"
-                routerLink="app-language"
+                routerLink="/app-language"
                 routerLinkActive="active"
                 [routerLinkActiveOptions]="{ exact: true }"
                 (click)="collapseNavbar()"
