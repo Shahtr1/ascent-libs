@@ -47,8 +47,35 @@ dto * with mapstruct
 
 filter *
 
+// Enums
+
+enum LanguageDirection{
+    LTR,
+    RTL
+}
+
 // Entities
 
 entity TestEntity{
     name String required minlength(3),
+}
+
+entity AppBaseTable{
+    name String required
+    viewConfig TextBlob required
+}
+
+
+entity AppLabel{
+    uuid String required
+    value String required
+}
+
+entity AppLanguage{
+    name String required
+    direction LanguageDirection required
+}
+
+relationship ManyToOne{
+    AppLabel{language} to AppLanguage
 }

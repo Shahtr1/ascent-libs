@@ -1,4 +1,4 @@
-import { NgModule, LOCALE_ID, ApplicationRef } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import locale from '@angular/common/locales/en';
@@ -51,9 +51,5 @@ export class AppModule {
     registerLocaleData(locale);
     iconLibrary.addIcons(...fontAwesomeIcons);
     dpConfig.minDate = { year: dayjs().subtract(100, 'year').year(), month: 1, day: 1 };
-  }
-
-  ngDoBootstrap(appRef: ApplicationRef): void {
-    appRef.bootstrap(MainComponent); // Replace with your main component
   }
 }
