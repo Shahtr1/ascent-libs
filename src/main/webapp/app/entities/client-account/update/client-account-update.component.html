@@ -1,0 +1,101 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+      <h2 id="jhi-client-account-heading" data-cy="ClientAccountCreateUpdateHeading">Create or edit a Client Account</h2>
+
+      <div>
+        <jhi-alert-error></jhi-alert-error>
+
+        <div class="row mb-3" *ngIf="editForm.controls.id.value !== null">
+          <label class="form-label" for="field_id">ID</label>
+          <input type="number" class="form-control" name="id" id="field_id" data-cy="id" formControlName="id" [readonly]="true" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_refId">Ref Id</label>
+          <input type="text" class="form-control" name="refId" id="field_refId" data-cy="refId" formControlName="refId" />
+          <div *ngIf="editForm.get('refId')!.invalid && (editForm.get('refId')!.dirty || editForm.get('refId')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('refId')?.errors?.required"> This field is required. </small>
+          </div>
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_shortname">Shortname</label>
+          <input type="text" class="form-control" name="shortname" id="field_shortname" data-cy="shortname" formControlName="shortname" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_middleName">Middle Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="middleName"
+            id="field_middleName"
+            data-cy="middleName"
+            formControlName="middleName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_trxnStatus">Trxn Status</label>
+          <input
+            type="text"
+            class="form-control"
+            name="trxnStatus"
+            id="field_trxnStatus"
+            data-cy="trxnStatus"
+            formControlName="trxnStatus"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_referenceName">Reference Name</label>
+          <input
+            type="text"
+            class="form-control"
+            name="referenceName"
+            id="field_referenceName"
+            data-cy="referenceName"
+            formControlName="referenceName"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_amount">Amount</label>
+          <input type="number" class="form-control" name="amount" id="field_amount" data-cy="amount" formControlName="amount" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_currency">Currency</label>
+          <input type="text" class="form-control" name="currency" id="field_currency" data-cy="currency" formControlName="currency" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_isActive">Is Active</label>
+          <input type="checkbox" class="form-check" name="isActive" id="field_isActive" data-cy="isActive" formControlName="isActive" />
+        </div>
+
+        <div class="row mb-3">
+          <label class="form-label" for="field_isEnabled">Is Enabled</label>
+          <input type="checkbox" class="form-check" name="isEnabled" id="field_isEnabled" data-cy="isEnabled" formControlName="isEnabled" />
+        </div>
+      </div>
+
+      <div>
+        <button type="button" id="cancel-save" data-cy="entityCreateCancelButton" class="btn btn-secondary" (click)="previousState()">
+          <fa-icon icon="ban"></fa-icon>&nbsp;<span>Cancel</span>
+        </button>
+
+        <button
+          type="submit"
+          id="save-entity"
+          data-cy="entityCreateSaveButton"
+          [disabled]="editForm.invalid || isSaving"
+          class="btn btn-primary"
+        >
+          <fa-icon icon="save"></fa-icon>&nbsp;<span>Save</span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

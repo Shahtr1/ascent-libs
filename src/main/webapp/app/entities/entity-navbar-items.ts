@@ -15,4 +15,8 @@ export const EntityNavbarItems = [
     name: 'AppLanguage',
     route: 'app-language',
   },
+  {
+    name: 'ClientAccount',
+    route: 'client-account',
+  },
 ];

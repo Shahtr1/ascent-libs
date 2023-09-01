@@ -24,6 +24,11 @@ import { RouterModule } from '@angular/router';
         data: { pageTitle: 'AppLanguages' },
         loadChildren: () => import('./app-language/app-language.module').then(m => m.AppLanguageModule),
       },
+      {
+        path: 'client-account',
+        data: { pageTitle: 'ClientAccounts' },
+        loadChildren: () => import('./client-account/client-account.module').then(m => m.ClientAccountModule),
+      },
       /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
     ]),
   ],

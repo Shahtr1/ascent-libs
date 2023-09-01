@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="clientAccount">
+      <h2 data-cy="clientAccountDetailsHeading"><span>Client Account</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span>ID</span></dt>
+        <dd>
+          <span>{{ clientAccount.id }}</span>
+        </dd>
+        <dt><span>Ref Id</span></dt>
+        <dd>
+          <span>{{ clientAccount.refId }}</span>
+        </dd>
+        <dt><span>Shortname</span></dt>
+        <dd>
+          <span>{{ clientAccount.shortname }}</span>
+        </dd>
+        <dt><span>Middle Name</span></dt>
+        <dd>
+          <span>{{ clientAccount.middleName }}</span>
+        </dd>
+        <dt><span>Trxn Status</span></dt>
+        <dd>
+          <span>{{ clientAccount.trxnStatus }}</span>
+        </dd>
+        <dt><span>Reference Name</span></dt>
+        <dd>
+          <span>{{ clientAccount.referenceName }}</span>
+        </dd>
+        <dt><span>Amount</span></dt>
+        <dd>
+          <span>{{ clientAccount.amount }}</span>
+        </dd>
+        <dt><span>Currency</span></dt>
+        <dd>
+          <span>{{ clientAccount.currency }}</span>
+        </dd>
+        <dt><span>Is Active</span></dt>
+        <dd>
+          <span>{{ clientAccount.isActive }}</span>
+        </dd>
+        <dt><span>Is Enabled</span></dt>
+        <dd>
+          <span>{{ clientAccount.isEnabled }}</span>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span>Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/client-account', clientAccount.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span>Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
