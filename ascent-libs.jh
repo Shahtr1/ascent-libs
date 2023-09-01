@@ -76,6 +76,18 @@ entity AppLanguage{
     direction LanguageDirection required
 }
 
+entity ClientAccount{
+    refId String required
+    shortname String
+    middleName String
+    trxnStatus String
+    referenceName String
+    amount Integer
+    currency String
+    isActive Boolean
+    isEnabled Boolean
+}
+
 relationship ManyToOne{
     AppLabel{language} to AppLanguage
 }
