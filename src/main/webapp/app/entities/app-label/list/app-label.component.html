@@ -40,9 +40,9 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="uuid">
+          <th scope="col" jhiSortBy="key">
             <div class="d-flex">
-              <span>Uuid</span>
+              <span>Key</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
@@ -66,7 +66,7 @@
           <td>
             <a [routerLink]="['/app-label', appLabel.id, 'view']">{{ appLabel.id }}</a>
           </td>
-          <td>{{ appLabel.uuid }}</td>
+          <td>{{ appLabel.key }}</td>
           <td>{{ appLabel.value }}</td>
           <td>
             <div *ngIf="appLabel.language">

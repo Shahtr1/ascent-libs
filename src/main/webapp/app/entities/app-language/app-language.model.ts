@@ -2,6 +2,7 @@ import { LanguageDirection } from 'app/entities/enumerations/language-direction.
 
 export interface IAppLanguage {
   id: number;
+  uuid?: string | null;
   name?: string | null;
   direction?: LanguageDirection | null;
 }

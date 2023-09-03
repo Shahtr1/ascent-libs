@@ -20,7 +20,7 @@ describe('AppLabel Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
-            uuid: expect.any(Object),
+            key: expect.any(Object),
             value: expect.any(Object),
             language: expect.any(Object),
           })
@@ -33,7 +33,7 @@ describe('AppLabel Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
-            uuid: expect.any(Object),
+            key: expect.any(Object),
             value: expect.any(Object),
             language: expect.any(Object),
           })

@@ -18,7 +18,7 @@ type AppBaseTableFormDefaults = Pick<NewAppBaseTable, 'id'>;
 
 type AppBaseTableFormGroupContent = {
   id: FormControl<IAppBaseTable['id'] | NewAppBaseTable['id']>;
-  name: FormControl<IAppBaseTable['name']>;
+  uuid: FormControl<IAppBaseTable['uuid']>;
   viewConfig: FormControl<IAppBaseTable['viewConfig']>;
 };
 
@@ -39,7 +39,7 @@ export class AppBaseTableFormService {
           validators: [Validators.required],
         }
       ),
-      name: new FormControl(appBaseTableRawValue.name, {
+      uuid: new FormControl(appBaseTableRawValue.uuid, {
         validators: [Validators.required],
       }),
       viewConfig: new FormControl(appBaseTableRawValue.viewConfig, {

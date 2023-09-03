@@ -90,8 +90,8 @@ public class AppBaseTableQueryService extends QueryService<AppBaseTable> {
             if (criteria.getId() != null) {
                 specification = specification.and(buildRangeSpecification(criteria.getId(), AppBaseTable_.id));
             }
-            if (criteria.getName() != null) {
-                specification = specification.and(buildStringSpecification(criteria.getName(), AppBaseTable_.name));
+            if (criteria.getUuid() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getUuid(), AppBaseTable_.uuid));
             }
         }
         return specification;

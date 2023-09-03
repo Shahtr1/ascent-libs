@@ -41,6 +41,8 @@ public class AppLanguageCriteria implements Serializable, Criteria {
 
     private LongFilter id;
 
+    private StringFilter uuid;
+
     private StringFilter name;
 
     private LanguageDirectionFilter direction;
@@ -51,6 +53,7 @@ public class AppLanguageCriteria implements Serializable, Criteria {
 
     public AppLanguageCriteria(AppLanguageCriteria other) {
         this.id = other.id == null ? null : other.id.copy();
+        this.uuid = other.uuid == null ? null : other.uuid.copy();
         this.name = other.name == null ? null : other.name.copy();
         this.direction = other.direction == null ? null : other.direction.copy();
         this.distinct = other.distinct;
@@ -74,6 +77,21 @@ public class AppLanguageCriteria implements Serializable, Criteria {
 
     public void setId(LongFilter id) {
         this.id = id;
+    }
+
+    public StringFilter getUuid() {
+        return uuid;
+    }
+
+    public StringFilter uuid() {
+        if (uuid == null) {
+            uuid = new StringFilter();
+        }
+        return uuid;
+    }
+
+    public void setUuid(StringFilter uuid) {
+        this.uuid = uuid;
     }
 
     public StringFilter getName() {
@@ -125,6 +143,7 @@ public class AppLanguageCriteria implements Serializable, Criteria {
         final AppLanguageCriteria that = (AppLanguageCriteria) o;
         return (
             Objects.equals(id, that.id) &&
+            Objects.equals(uuid, that.uuid) &&
             Objects.equals(name, that.name) &&
             Objects.equals(direction, that.direction) &&
             Objects.equals(distinct, that.distinct)
@@ -133,7 +152,7 @@ public class AppLanguageCriteria implements Serializable, Criteria {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, direction, distinct);
+        return Objects.hash(id, uuid, name, direction, distinct);
     }
 
     // prettier-ignore
@@ -141,6 +160,7 @@ public class AppLanguageCriteria implements Serializable, Criteria {
     public String toString() {
         return "AppLanguageCriteria{" +
             (id != null ? "id=" + id + ", " : "") +
+            (uuid != null ? "uuid=" + uuid + ", " : "") +
             (name != null ? "name=" + name + ", " : "") +
             (direction != null ? "direction=" + direction + ", " : "") +
             (distinct != null ? "distinct=" + distinct + ", " : "") +

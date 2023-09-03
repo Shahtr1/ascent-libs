@@ -14,7 +14,7 @@ public class AppBaseTableDTO implements Serializable {
     private Long id;
 
     @NotNull
-    private String name;
+    private String uuid;
 
     @Lob
     private String viewConfig;
@@ -27,12 +27,12 @@ public class AppBaseTableDTO implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getUuid() {
+        return uuid;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getViewConfig() {
@@ -69,7 +69,7 @@ public class AppBaseTableDTO implements Serializable {
     public String toString() {
         return "AppBaseTableDTO{" +
             "id=" + getId() +
-            ", name='" + getName() + "'" +
+            ", uuid='" + getUuid() + "'" +
             ", viewConfig='" + getViewConfig() + "'" +
             "}";
     }

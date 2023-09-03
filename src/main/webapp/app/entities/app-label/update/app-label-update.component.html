@@ -12,10 +12,10 @@
         </div>
 
         <div class="row mb-3">
-          <label class="form-label" for="field_uuid">Uuid</label>
-          <input type="text" class="form-control" name="uuid" id="field_uuid" data-cy="uuid" formControlName="uuid" />
-          <div *ngIf="editForm.get('uuid')!.invalid && (editForm.get('uuid')!.dirty || editForm.get('uuid')!.touched)">
-            <small class="form-text text-danger" *ngIf="editForm.get('uuid')?.errors?.required"> This field is required. </small>
+          <label class="form-label" for="field_key">Key</label>
+          <input type="text" class="form-control" name="key" id="field_key" data-cy="key" formControlName="key" />
+          <div *ngIf="editForm.get('key')!.invalid && (editForm.get('key')!.dirty || editForm.get('key')!.touched)">
+            <small class="form-text text-danger" *ngIf="editForm.get('key')?.errors?.required"> This field is required. </small>
           </div>
         </div>
 

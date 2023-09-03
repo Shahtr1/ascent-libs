@@ -5,11 +5,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule.forChild([
       {
-        path: 'test-entity',
-        data: { pageTitle: 'TestEntities' },
-        loadChildren: () => import('./test-entity/test-entity.module').then(m => m.TestEntityModule),
-      },
-      {
         path: 'app-base-table',
         data: { pageTitle: 'AppBaseTables' },
         loadChildren: () => import('./app-base-table/app-base-table.module').then(m => m.AppBaseTableModule),
@@ -23,6 +18,11 @@ import { RouterModule } from '@angular/router';
         path: 'app-language',
         data: { pageTitle: 'AppLanguages' },
         loadChildren: () => import('./app-language/app-language.module').then(m => m.AppLanguageModule),
+      },
+      {
+        path: 'app-properties',
+        data: { pageTitle: 'AppProperties' },
+        loadChildren: () => import('./app-properties/app-properties.module').then(m => m.AppPropertiesModule),
       },
       {
         path: 'client-account',

@@ -20,7 +20,7 @@ describe('AppBaseTable Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
-            name: expect.any(Object),
+            uuid: expect.any(Object),
             viewConfig: expect.any(Object),
           })
         );
@@ -32,7 +32,7 @@ describe('AppBaseTable Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
-            name: expect.any(Object),
+            uuid: expect.any(Object),
             viewConfig: expect.any(Object),
           })
         );

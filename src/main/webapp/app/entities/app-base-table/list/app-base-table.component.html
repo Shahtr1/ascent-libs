@@ -40,9 +40,9 @@
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
-          <th scope="col" jhiSortBy="name">
+          <th scope="col" jhiSortBy="uuid">
             <div class="d-flex">
-              <span>Name</span>
+              <span>Uuid</span>
               <fa-icon class="p-1" icon="sort"></fa-icon>
             </div>
           </th>
@@ -60,7 +60,7 @@
           <td>
             <a [routerLink]="['/app-base-table', appBaseTable.id, 'view']">{{ appBaseTable.id }}</a>
           </td>
-          <td>{{ appBaseTable.name }}</td>
+          <td>{{ appBaseTable.uuid }}</td>
           <td>{{ appBaseTable.viewConfig }}</td>
           <td class="text-end">
             <div class="btn-group">

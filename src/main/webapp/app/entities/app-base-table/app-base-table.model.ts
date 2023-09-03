@@ -1,6 +1,6 @@
 export interface IAppBaseTable {
   id: number;
-  name?: string | null;
+  uuid?: string | null;
   viewConfig?: string | null;
 }
 

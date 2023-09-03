@@ -14,6 +14,9 @@ public class AppLanguageDTO implements Serializable {
     private Long id;
 
     @NotNull
+    private String uuid;
+
+    @NotNull
     private String name;
 
     @NotNull
@@ -25,6 +28,14 @@ public class AppLanguageDTO implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getName() {
@@ -69,6 +80,7 @@ public class AppLanguageDTO implements Serializable {
     public String toString() {
         return "AppLanguageDTO{" +
             "id=" + getId() +
+            ", uuid='" + getUuid() + "'" +
             ", name='" + getName() + "'" +
             ", direction='" + getDirection() + "'" +
             "}";

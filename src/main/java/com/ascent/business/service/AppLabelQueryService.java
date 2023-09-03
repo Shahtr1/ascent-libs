@@ -90,8 +90,8 @@ public class AppLabelQueryService extends QueryService<AppLabel> {
             if (criteria.getId() != null) {
                 specification = specification.and(buildRangeSpecification(criteria.getId(), AppLabel_.id));
             }
-            if (criteria.getUuid() != null) {
-                specification = specification.and(buildStringSpecification(criteria.getUuid(), AppLabel_.uuid));
+            if (criteria.getKey() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getKey(), AppLabel_.key));
             }
             if (criteria.getValue() != null) {
                 specification = specification.and(buildStringSpecification(criteria.getValue(), AppLabel_.value));

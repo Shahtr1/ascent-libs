@@ -25,6 +25,10 @@ public class AppLanguage implements Serializable {
     private Long id;
 
     @NotNull
+    @Column(name = "uuid", nullable = false, unique = true)
+    private String uuid;
+
+    @NotNull
     @Column(name = "name", nullable = false)
     private String name;
 
@@ -46,6 +50,19 @@ public class AppLanguage implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getUuid() {
+        return this.uuid;
+    }
+
+    public AppLanguage uuid(String uuid) {
+        this.setUuid(uuid);
+        return this;
+    }
+
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getName() {
@@ -98,6 +115,7 @@ public class AppLanguage implements Serializable {
     public String toString() {
         return "AppLanguage{" +
             "id=" + getId() +
+            ", uuid='" + getUuid() + "'" +
             ", name='" + getName() + "'" +
             ", direction='" + getDirection() + "'" +
             "}";

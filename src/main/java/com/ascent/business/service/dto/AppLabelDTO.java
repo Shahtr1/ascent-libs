@@ -13,7 +13,7 @@ public class AppLabelDTO implements Serializable {
     private Long id;
 
     @NotNull
-    private String uuid;
+    private String key;
 
     @NotNull
     private String value;
@@ -28,12 +28,12 @@ public class AppLabelDTO implements Serializable {
         this.id = id;
     }
 
-    public String getUuid() {
-        return uuid;
+    public String getKey() {
+        return key;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getValue() {
@@ -78,7 +78,7 @@ public class AppLabelDTO implements Serializable {
     public String toString() {
         return "AppLabelDTO{" +
             "id=" + getId() +
-            ", uuid='" + getUuid() + "'" +
+            ", key='" + getKey() + "'" +
             ", value='" + getValue() + "'" +
             ", language=" + getLanguage() +
             "}";

@@ -2,24 +2,24 @@ import { IAppLabel, NewAppLabel } from './app-label.model';
 
 export const sampleWithRequiredData: IAppLabel = {
   id: 65567,
-  uuid: 'deposit',
+  key: 'deposit',
   value: 'Electronics',
 };
 
 export const sampleWithPartialData: IAppLabel = {
   id: 98765,
-  uuid: 'generate',
+  key: 'generate',
   value: 'Clothing',
 };
 
 export const sampleWithFullData: IAppLabel = {
   id: 2204,
-  uuid: 'focus override',
+  key: 'focus override',
   value: 'generating Denmark',
 };
 
 export const sampleWithNewData: NewAppLabel = {
-  uuid: 'Investor',
+  key: 'Investor',
   value: 'parse',
   id: null,
 };

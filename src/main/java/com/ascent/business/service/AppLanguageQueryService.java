@@ -90,6 +90,9 @@ public class AppLanguageQueryService extends QueryService<AppLanguage> {
             if (criteria.getId() != null) {
                 specification = specification.and(buildRangeSpecification(criteria.getId(), AppLanguage_.id));
             }
+            if (criteria.getUuid() != null) {
+                specification = specification.and(buildStringSpecification(criteria.getUuid(), AppLanguage_.uuid));
+            }
             if (criteria.getName() != null) {
                 specification = specification.and(buildStringSpecification(criteria.getName(), AppLanguage_.name));
             }

@@ -20,6 +20,7 @@ describe('AppLanguage Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
+            uuid: expect.any(Object),
             name: expect.any(Object),
             direction: expect.any(Object),
           })
@@ -32,6 +33,7 @@ describe('AppLanguage Form Service', () => {
         expect(formGroup.controls).toEqual(
           expect.objectContaining({
             id: expect.any(Object),
+            uuid: expect.any(Object),
             name: expect.any(Object),
             direction: expect.any(Object),
           })

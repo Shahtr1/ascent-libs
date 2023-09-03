@@ -18,6 +18,7 @@ type AppLanguageFormDefaults = Pick<NewAppLanguage, 'id'>;
 
 type AppLanguageFormGroupContent = {
   id: FormControl<IAppLanguage['id'] | NewAppLanguage['id']>;
+  uuid: FormControl<IAppLanguage['uuid']>;
   name: FormControl<IAppLanguage['name']>;
   direction: FormControl<IAppLanguage['direction']>;
 };
@@ -39,6 +40,9 @@ export class AppLanguageFormService {
           validators: [Validators.required],
         }
       ),
+      uuid: new FormControl(appLanguageRawValue.uuid, {
+        validators: [Validators.required],
+      }),
       name: new FormControl(appLanguageRawValue.name, {
         validators: [Validators.required],
       }),

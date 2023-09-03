@@ -4,24 +4,28 @@ import { IAppLanguage, NewAppLanguage } from './app-language.model';
 
 export const sampleWithRequiredData: IAppLanguage = {
   id: 77962,
-  name: 'Dollar',
-  direction: LanguageDirection['LTR'],
+  uuid: 'Dollar',
+  name: 'Fully-configurable Ergonomic',
+  direction: LanguageDirection['RTL'],
 };
 
 export const sampleWithPartialData: IAppLanguage = {
-  id: 23519,
-  name: 'vertical',
+  id: 18471,
+  uuid: 'Money',
+  name: 'Customer RSS reinvent',
   direction: LanguageDirection['LTR'],
 };
 
 export const sampleWithFullData: IAppLanguage = {
-  id: 84294,
-  name: 'hacking',
+  id: 33984,
+  uuid: 'eyeballs',
+  name: 'Berkshire Towels',
   direction: LanguageDirection['RTL'],
 };
 
 export const sampleWithNewData: NewAppLanguage = {
-  name: 'Shoes Florida',
+  uuid: 'Creative',
+  name: 'Representative',
   direction: LanguageDirection['LTR'],
   id: null,
 };

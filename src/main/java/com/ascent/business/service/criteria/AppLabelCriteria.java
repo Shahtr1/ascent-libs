@@ -23,7 +23,7 @@ public class AppLabelCriteria implements Serializable, Criteria {
 
     private LongFilter id;
 
-    private StringFilter uuid;
+    private StringFilter key;
 
     private StringFilter value;
 
@@ -35,7 +35,7 @@ public class AppLabelCriteria implements Serializable, Criteria {
 
     public AppLabelCriteria(AppLabelCriteria other) {
         this.id = other.id == null ? null : other.id.copy();
-        this.uuid = other.uuid == null ? null : other.uuid.copy();
+        this.key = other.key == null ? null : other.key.copy();
         this.value = other.value == null ? null : other.value.copy();
         this.languageId = other.languageId == null ? null : other.languageId.copy();
         this.distinct = other.distinct;
@@ -61,19 +61,19 @@ public class AppLabelCriteria implements Serializable, Criteria {
         this.id = id;
     }
 
-    public StringFilter getUuid() {
-        return uuid;
+    public StringFilter getKey() {
+        return key;
     }
 
-    public StringFilter uuid() {
-        if (uuid == null) {
-            uuid = new StringFilter();
+    public StringFilter key() {
+        if (key == null) {
+            key = new StringFilter();
         }
-        return uuid;
+        return key;
     }
 
-    public void setUuid(StringFilter uuid) {
-        this.uuid = uuid;
+    public void setKey(StringFilter key) {
+        this.key = key;
     }
 
     public StringFilter getValue() {
@@ -125,7 +125,7 @@ public class AppLabelCriteria implements Serializable, Criteria {
         final AppLabelCriteria that = (AppLabelCriteria) o;
         return (
             Objects.equals(id, that.id) &&
-            Objects.equals(uuid, that.uuid) &&
+            Objects.equals(key, that.key) &&
             Objects.equals(value, that.value) &&
             Objects.equals(languageId, that.languageId) &&
             Objects.equals(distinct, that.distinct)
@@ -134,7 +134,7 @@ public class AppLabelCriteria implements Serializable, Criteria {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, uuid, value, languageId, distinct);
+        return Objects.hash(id, key, value, languageId, distinct);
     }
 
     // prettier-ignore
@@ -142,7 +142,7 @@ public class AppLabelCriteria implements Serializable, Criteria {
     public String toString() {
         return "AppLabelCriteria{" +
             (id != null ? "id=" + id + ", " : "") +
-            (uuid != null ? "uuid=" + uuid + ", " : "") +
+            (key != null ? "key=" + key + ", " : "") +
             (value != null ? "value=" + value + ", " : "") +
             (languageId != null ? "languageId=" + languageId + ", " : "") +
             (distinct != null ? "distinct=" + distinct + ", " : "") +

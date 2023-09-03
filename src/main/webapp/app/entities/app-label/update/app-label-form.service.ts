@@ -18,7 +18,7 @@ type AppLabelFormDefaults = Pick<NewAppLabel, 'id'>;
 
 type AppLabelFormGroupContent = {
   id: FormControl<IAppLabel['id'] | NewAppLabel['id']>;
-  uuid: FormControl<IAppLabel['uuid']>;
+  key: FormControl<IAppLabel['key']>;
   value: FormControl<IAppLabel['value']>;
   language: FormControl<IAppLabel['language']>;
 };
@@ -40,7 +40,7 @@ export class AppLabelFormService {
           validators: [Validators.required],
         }
       ),
-      uuid: new FormControl(appLabelRawValue.uuid, {
+      key: new FormControl(appLabelRawValue.key, {
         validators: [Validators.required],
       }),
       value: new FormControl(appLabelRawValue.value, {

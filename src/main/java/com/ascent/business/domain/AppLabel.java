@@ -24,8 +24,8 @@ public class AppLabel implements Serializable {
     private Long id;
 
     @NotNull
-    @Column(name = "uuid", nullable = false)
-    private String uuid;
+    @Column(name = "jhi_key", nullable = false)
+    private String key;
 
     @NotNull
     @Column(name = "value", nullable = false)
@@ -49,17 +49,17 @@ public class AppLabel implements Serializable {
         this.id = id;
     }
 
-    public String getUuid() {
-        return this.uuid;
+    public String getKey() {
+        return this.key;
     }
 
-    public AppLabel uuid(String uuid) {
-        this.setUuid(uuid);
+    public AppLabel key(String key) {
+        this.setKey(key);
         return this;
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
+    public void setKey(String key) {
+        this.key = key;
     }
 
     public String getValue() {
@@ -112,7 +112,7 @@ public class AppLabel implements Serializable {
     public String toString() {
         return "AppLabel{" +
             "id=" + getId() +
-            ", uuid='" + getUuid() + "'" +
+            ", key='" + getKey() + "'" +
             ", value='" + getValue() + "'" +
             "}";
     }

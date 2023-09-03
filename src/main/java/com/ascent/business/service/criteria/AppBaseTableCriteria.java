@@ -23,7 +23,7 @@ public class AppBaseTableCriteria implements Serializable, Criteria {
 
     private LongFilter id;
 
-    private StringFilter name;
+    private StringFilter uuid;
 
     private Boolean distinct;
 
@@ -31,7 +31,7 @@ public class AppBaseTableCriteria implements Serializable, Criteria {
 
     public AppBaseTableCriteria(AppBaseTableCriteria other) {
         this.id = other.id == null ? null : other.id.copy();
-        this.name = other.name == null ? null : other.name.copy();
+        this.uuid = other.uuid == null ? null : other.uuid.copy();
         this.distinct = other.distinct;
     }
 
@@ -55,19 +55,19 @@ public class AppBaseTableCriteria implements Serializable, Criteria {
         this.id = id;
     }
 
-    public StringFilter getName() {
-        return name;
+    public StringFilter getUuid() {
+        return uuid;
     }
 
-    public StringFilter name() {
-        if (name == null) {
-            name = new StringFilter();
+    public StringFilter uuid() {
+        if (uuid == null) {
+            uuid = new StringFilter();
         }
-        return name;
+        return uuid;
     }
 
-    public void setName(StringFilter name) {
-        this.name = name;
+    public void setUuid(StringFilter uuid) {
+        this.uuid = uuid;
     }
 
     public Boolean getDistinct() {
@@ -87,12 +87,12 @@ public class AppBaseTableCriteria implements Serializable, Criteria {
             return false;
         }
         final AppBaseTableCriteria that = (AppBaseTableCriteria) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(distinct, that.distinct);
+        return Objects.equals(id, that.id) && Objects.equals(uuid, that.uuid) && Objects.equals(distinct, that.distinct);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, distinct);
+        return Objects.hash(id, uuid, distinct);
     }
 
     // prettier-ignore
@@ -100,7 +100,7 @@ public class AppBaseTableCriteria implements Serializable, Criteria {
     public String toString() {
         return "AppBaseTableCriteria{" +
             (id != null ? "id=" + id + ", " : "") +
-            (name != null ? "name=" + name + ", " : "") +
+            (uuid != null ? "uuid=" + uuid + ", " : "") +
             (distinct != null ? "distinct=" + distinct + ", " : "") +
             "}";
     }

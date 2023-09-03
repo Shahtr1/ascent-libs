@@ -24,8 +24,8 @@ public class AppBaseTable implements Serializable {
     private Long id;
 
     @NotNull
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "uuid", nullable = false, unique = true)
+    private String uuid;
 
     @Lob
     @Column(name = "view_config", nullable = false)
@@ -46,17 +46,17 @@ public class AppBaseTable implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return this.name;
+    public String getUuid() {
+        return this.uuid;
     }
 
-    public AppBaseTable name(String name) {
-        this.setName(name);
+    public AppBaseTable uuid(String uuid) {
+        this.setUuid(uuid);
         return this;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 
     public String getViewConfig() {
@@ -96,7 +96,7 @@ public class AppBaseTable implements Serializable {
     public String toString() {
         return "AppBaseTable{" +
             "id=" + getId() +
-            ", name='" + getName() + "'" +
+            ", uuid='" + getUuid() + "'" +
             ", viewConfig='" + getViewConfig() + "'" +
             "}";
     }

@@ -1,9 +1,5 @@
 export const EntityNavbarItems = [
   {
-    name: 'TestEntity',
-    route: 'test-entity',
-  },
-  {
     name: 'AppBaseTable',
     route: 'app-base-table',
   },
@@ -14,6 +10,10 @@ export const EntityNavbarItems = [
   {
     name: 'AppLanguage',
     route: 'app-language',
+  },
+  {
+    name: 'AppProperties',
+    route: 'app-properties',
   },
   {
     name: 'ClientAccount',
