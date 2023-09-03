@@ -55,25 +55,28 @@ enum LanguageDirection{
 }
 
 // Entities
-
-entity TestEntity{
-    name String required minlength(3),
-}
-
 entity AppBaseTable{
-    name String required
+    uuid String required unique
     viewConfig TextBlob required
 }
 
 
 entity AppLabel{
-    uuid String required
+    key String required
     value String required
 }
 
 entity AppLanguage{
+    uuid String required unique
     name String required
     direction LanguageDirection required
+}
+
+entity AppProperties{
+    uuid String required unique
+    name String required
+    value String required
+    description String
 }
 
 entity ClientAccount{
